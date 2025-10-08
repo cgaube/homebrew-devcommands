@@ -8,7 +8,7 @@ class DevCommands < Formula
   def install
     system "make"
     bin.install "dev"
-    etc.install "devcommands"
+    (prefix / "etc").install "devcommands"
   end
 
   test do

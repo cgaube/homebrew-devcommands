@@ -15,8 +15,10 @@ brew install --HEAD dev-commands
 
 ## Upgrading formula 
 
+Because we are using head mode we need do a `reinstall`
+
 ```shell
-brew upgrade dev-commands
+brew reinstall dev-commands
 ```
 
 ## Updating homebrew-formulas
