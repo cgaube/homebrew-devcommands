@@ -1,7 +1,7 @@
-class DevCommands < Formula
+class DevCli < Formula
   desc "DevCommands modern multi-CLI applications"
-  homepage "https://github.com/cgaube/dev-commands"
-  head "https://github.com/cgaube/dev-commands.git", branch: "main"
+  homepage "https://github.com/cgaube/dev-cli"
+  head "https://github.com/cgaube/dev-cli.git", branch: "main"
 
   depends_on "go" => :build
 
