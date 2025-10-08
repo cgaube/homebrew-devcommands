@@ -3,14 +3,14 @@
 ## Tapping
 
 ```shell
-brew tap cgaube/dev-commands
+brew tap cgaube/devcommands
 ```
 ## Installing formula
 
 ### Main `dev` utils
 
 ```shell
-brew install --HEAD dev-commands
+brew install --HEAD dev-cli
 ```
 
 ## Upgrading formula 
@@ -18,7 +18,7 @@ brew install --HEAD dev-commands
 Because we are using head mode we need do a `reinstall`
 
 ```shell
-brew reinstall dev-commands
+brew reinstall dev-cli
 ```
 
 ## Updating homebrew-formulas
