@@ -6,12 +6,13 @@ class DevcommandTest < Formula
   depends_on "bun" => :build
 
   def install
-      cd "packages/test" do
-        # compile it into a single binary
-        system "bun", "run", "compile"
-        # Install the bin in the devcommands folder
-        (prefix/"etc/devcommands").install "bin"
-      end
+    cd "packages/test" do
+      # install deps for just this package
+      system "bun", "install", "--no-save"
+      # compile it into a single binary
+      system "bun", "run", "compile"
+      # Install the bin/* in the devcommands homebrew etc folder
+      (prefix/"etc/devcommands").install "bin"
+    end
   end
-
 end
