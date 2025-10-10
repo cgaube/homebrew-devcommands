@@ -1,8 +1,12 @@
 class DevcommandBunFormula < Formula
-  homepage "https://github.com/cgaube/dev-commands"
-  head "https://github.com/cgaube/dev-commands.git", branch: "main"
-
-  depends_on "bun" => :build
+   def self.inherited(subclass)
+       super
+      subclass.instance_eval do
+        homepage "https://github.com/cgaube/dev-commands"
+        head "https://github.com/cgaube/dev-commands.git", branch: "main"
+        depends_on "bun" => :build
+      end
+    end
 
   def self.install_package(package_name)
     define_method(:install) do
