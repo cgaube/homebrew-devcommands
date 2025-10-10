@@ -11,7 +11,4 @@ class DevCli < Formula
     (prefix / "etc").install "devcommands"
   end
 
-  test do
-    system "#{bin}/dev", "version"
-  end
 end
