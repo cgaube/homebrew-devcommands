@@ -7,13 +7,10 @@ class DevcommandTest < Formula
 
   def install
       cd "packages/test" do
-        # install deps for just this package
-        system "bun", "install", "--no-save"
         # compile it into a single binary
-        system "bun", "run", "build"
-
-        # install the binary into brew’s etc path
-       (prefix / "bin").install "devcommands"
+        system "bun", "run", "compile"
+        # Install the bin in the devcommands folder
+        (prefix/"etc/devcommands").install "bin"
       end
   end
 
