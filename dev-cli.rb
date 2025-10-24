@@ -4,6 +4,7 @@ class DevCli < Formula
   head "https://github.com/cgaube/dev-cli.git", branch: "main"
 
   depends_on "go" => :build
+  depends_on "jq"
 
   def install
     system "make"

@@ -8,4 +8,5 @@ class DevcommandsAll < Formula
   # Subcommands
   depends_on "cgaube/devcommands/devcommands-git"
   depends_on "cgaube/devcommands/devcommands-linear"
+  depends_on "cgaube/devcommands/devcommands-utils"
 end
