@@ -5,6 +5,7 @@ class DevcommandBunFormula < Formula
        homepage "https://github.com/cgaube/dev-commands"
        head "https://github.com/cgaube/dev-commands.git", branch: "main"
        depends_on "oven-sh/bun/bun" => :build
+       depends_on "cgaube/devcommands/dev-cli"
     end
   end
 
