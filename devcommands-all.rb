@@ -6,7 +6,8 @@ class DevcommandsAll < Formula
   # Main Command
   depends_on "cgaube/devcommands/dev-cli"
   # Subcommands
-  depends_on "cgaube/devcommands/devcommands-git"
-  depends_on "cgaube/devcommands/devcommands-linear"
-  depends_on "cgaube/devcommands/devcommands-utils"
+  depends_on "cgaube/devcommands/devcommand-packages"
+  depends_on "cgaube/devcommands/devcommand-git"
+  depends_on "cgaube/devcommands/devcommand-linear"
+  depends_on "cgaube/devcommands/devcommand-utils"
 end
