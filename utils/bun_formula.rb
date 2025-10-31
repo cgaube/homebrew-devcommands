@@ -22,18 +22,13 @@ class DevcommandBunFormula < Formula
     end
 
     if has_config_files
-      define_method(:uninstall) do
-        # Remove the config folder explicitly
-        rm_rf etc/"devcommands-config/#{package_name}"
-      end
-
       define_method(:caveats) do
         <<~EOS
+          ! -----
           Configuration files are located at: #{etc}/devcommands-config/#{package_name}
-          These files will be removed automatically when you uninstall this formula.
-          -----
-          Note: Secret configurations are stored in the keychain and are not removed automatically.
-          To clear them, run: `dev #{package_name} config clear` before uninstalling this formula.
+          They are not removed automatically on uninstall.
+          To remove them, run: `dev #{package_name} config clear` before uninstalling this formula.
+          ! -----
         EOS
       end
     end
