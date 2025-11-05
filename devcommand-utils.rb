@@ -4,5 +4,5 @@ class DevcommandUtils < DevcommandBunFormula
   install_package "utils"
   desc "Misc utils"
   # Version will automatically be set via github workflow action
-  version "2024.1.16-1705334400"
+  version "2025.11.5-1762320333"
 end
