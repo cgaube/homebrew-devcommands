@@ -3,6 +3,7 @@ class DevcommandBunFormula < Formula
      super
      subclass.instance_eval do
        homepage "https://github.com/cgaube/dev-commands"
+       # Use the main branch as the source for all packages
        url "https://github.com/cgaube/dev-commands.git", :using => :git, :tag => "main"
 
        depends_on "oven-sh/bun/bun" => :build
