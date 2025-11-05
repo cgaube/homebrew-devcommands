@@ -3,7 +3,8 @@ class DevcommandBunFormula < Formula
      super
      subclass.instance_eval do
        homepage "https://github.com/cgaube/dev-commands"
-       url "https://github.com/cgaube/dev-commands/archive/refs/heads/main.zip"
+       url "https://github.com/cgaube/dev-commands.git", :using => :git, :tag => "main"
+
        depends_on "oven-sh/bun/bun" => :build
        depends_on "cgaube/devcommands/dev-cli"
     end
