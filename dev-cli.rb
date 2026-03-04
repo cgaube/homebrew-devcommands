@@ -3,7 +3,7 @@ class DevCli < Formula
   homepage "https://github.com/cgaube/dev-cli"
 
   # We will manually update this version when releasing new code
-  url "https://github.com/cgaube/dev-cli.git", :using => :git, :tag => "main"
+  url "https://github.com/cgaube/dev-cli.git", :using => :git, :branch => "main"
   version "1.1"
 
   depends_on "go" => :build
