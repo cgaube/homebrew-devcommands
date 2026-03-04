@@ -11,7 +11,20 @@ class DevCli < Formula
 
   def install
     system "make"
+
+    # 1. Install the main entry point to the standard PATH
     bin.install "dev"
-    (etc/"devcommands").install Dir["devcommands/*"]
+
+    # 2. Install helper scripts/binaries to libexec (the Cellar)
+    # This ensures 'version' and any future helpers are version-tracked
+    if File.directory?("devcommands") && !Dir.empty?("devcommands")
+      libexec.install Dir["devcommands/*"]
+
+      # 3. Symlink the contents of libexec into the shared discovery folder
+      # This replaces the "real" files with links, keeping /etc clean
+      Dir.glob("#{libexec}/*") do |file|
+        (etc/"devcommands").install_symlink file
+      end
+    end
   end
 end
