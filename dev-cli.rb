@@ -12,6 +12,6 @@ class DevCli < Formula
   def install
     system "make"
     bin.install "dev"
-    (prefix / "etc").install "devcommands"
+    (etc/"devcommands").install Dir["bin/*"]
   end
 end
