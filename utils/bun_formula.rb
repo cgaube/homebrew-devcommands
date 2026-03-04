@@ -18,8 +18,13 @@ class DevcommandBunFormula < Formula
         system "bun", "install", "--no-save"
         # compile it into a single binary
         system "bun", "run", "compile"
-        # Install the bin/* in the devcommands homebrew etc folder
-        (etc/"devcommands").install "bin/#{package_name}"
+
+        # 1. First, install it to the Cellar (this prevents the "Empty installation" error)
+        # This puts it in /opt/homebrew/Cellar/devcommand-*/VERSION/lib/devcommands/
+        (lib/"devcommands").install "bin/#{package_name}"
+
+        # 2. Then, symlink it into the global etc discovery folder
+        (etc/"devcommands").install_symlink (lib/"devcommands/#{package_name}")
       end
     end
 
