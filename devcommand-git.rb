@@ -4,5 +4,5 @@ class DevcommandGit < DevcommandBunFormula
   install_package "git"
   desc "Git related helpers"
   # Version will automatically be set via github workflow action
-  version "2026.3.4-1772659182"
+  version "2026.3.4-1772665324"
 end
