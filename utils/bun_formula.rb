@@ -19,7 +19,7 @@ class DevcommandBunFormula < Formula
         # compile it into a single binary
         system "bun", "run", "compile"
         # Install the bin/* in the devcommands homebrew etc folder
-        (prefix/"etc/devcommands").install "bin/#{package_name}"
+        (etc/"devcommands").install "bin/#{package_name}"
       end
     end
 
