@@ -19,12 +19,13 @@ class DevcommandBunFormula < Formula
         # compile it into a single binary
         system "bun", "run", "compile"
 
-        # 1. First, install it to the Cellar (this prevents the "Empty installation" error)
-        # This puts it in /opt/homebrew/Cellar/devcommand-*/VERSION/lib/devcommands/
-        (lib/"devcommands").install "bin/#{package_name}"
+        # 1. Install to the Cellar's libexec folder
+        # This moves "bin/{package_name}" to ".../Cellar/devcommand-{package_name}/VERSION/libexec/{package_name}"
+        libexec.install "bin/#{package_name}"
 
-        # 2. Then, symlink it into the global etc discovery folder
-        (etc/"devcommands").install_symlink (lib/"devcommands/#{package_name}")
+        # 2. Symlink from the global etc folder to that libexec location
+        # This creates "/opt/homebrew/etc/devcommands/{package_name}" -> "../../Cellar/devcommand-{package_name}/VERSION/libexec/{package_name}"
+        (etc/"devcommands").install_symlink (libexec/package_name)
       end
     end
 
