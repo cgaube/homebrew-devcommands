@@ -24,7 +24,7 @@ brew tap cgaube/devcommands
 brew install dev-cli
 
 # Manually install other packages as needed
-brew install dev-commands-<package-name>
+brew install devcommand-<package-name>
 ```
 
 ### Package Management
