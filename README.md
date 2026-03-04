@@ -3,7 +3,14 @@
 This repository contains Homebrew formulas for installing `dev-commands` CLI
 tools and commands.
 
+- [dev-cli](https://github.com/cgaube/dev-cli) – The main `dev` CLI tool, which
+  provides a unified interface for various development commands.
+- [dev-commands](https://github.com/cgaube/dev-commands) – Monorepo for all dev
+  commands.
+
 ## Tapping
+
+You need to tap the repository before installing any formula:
 
 ```shell
 brew tap cgaube/devcommands
@@ -11,31 +18,34 @@ brew tap cgaube/devcommands
 
 ## Installing formula
 
-To avoid publishing tags or releases from the monorepo and constantly updating
-formulas, we use Homebrew’s
-[HEAD mode](https://github.com/Homebrew/brew/blob/master/docs/Formula-Cookbook.md#unstable-versions-head).
-
 ### Main `dev` utility
 
 ```shell
-brew install --HEAD dev-cli
+brew install dev-cli
+
+# Manually install other packages as needed
+brew install dev-commands-<package-name>
 ```
 
-### Other packages
+### Package Management
+
+As an alternative to installing `dev-cli` directly, you can install the
+`devcommand-packages` formula, which provides a package management system for
+listing and installing default command packages.
+
+It automatically installs `dev-cli` as a dependency, allowing you to use the
+`dev packages` command to manage your packages.
 
 ```shell
-brew install --HEAD devcommand-test
+brew install devcommand-packages
+
+dev packages list
+dev packages install <package-name>
 ```
 
-## Upgrading formula
+## Development
 
-Since we’re using **HEAD** mode, upgrades require a `reinstall`:
-
-```shell
-brew reinstall dev-cli
-```
-
-## Updating homebrew-formulas
+### Updating homebrew-formulas
 
 1. Edit the formula files
 2. Commit your changes
