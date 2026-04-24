@@ -4,5 +4,5 @@ class DevcommandLinear < DevcommandBunFormula
   install_package "linear", has_config_files: true
   desc "Linear related helpers"
   # Version will automatically be set via github workflow action
-  version "2026.3.25-1774408455"
+  version "2026.4.24-1777004882"
 end
