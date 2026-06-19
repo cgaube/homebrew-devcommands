@@ -21,6 +21,10 @@ brew tap cgaube/devcommands
 ### Main `dev` utility
 
 ```shell
+# Trust the custom taps (Required for Homebrew 6.0+)
+brew trust cgaube/devcommands oven-sh/bun
+
+# Install the CLI
 brew install dev-cli
 
 # Manually install other packages as needed
@@ -37,8 +41,13 @@ It automatically installs `dev-cli` as a dependency, allowing you to use the
 `dev packages` command to manage your packages.
 
 ```shell
-brew install devcommand-packages
+# 1. Trust the custom tap (Required for Homebrew 6.0+)
+brew trust cgaube/devcommands
 
+# 2. Install the package manager
+brew install cgaube/devcommands/devcommand-packages
+
+# 3. Install the packages you want
 dev packages list
 dev packages install <package-name>
 ```
