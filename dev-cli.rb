@@ -4,7 +4,7 @@ class DevCli < Formula
 
   # We will manually update this version when releasing new code
   url "https://github.com/cgaube/dev-cli.git", :using => :git, :branch => "main"
-  version "1.1"
+  version "1.2"
 
   depends_on "go" => :build
   depends_on "jq"
