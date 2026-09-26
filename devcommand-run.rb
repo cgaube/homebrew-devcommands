@@ -4,5 +4,5 @@ class DevcommandRun < DevcommandBunFormula
   install_package "run"
   desc "Run project scripts from any package manager"
   # Version will automatically be set via github workflow action
-  version "2026.6.23-1782187636"
+  version "2026.9.26-1790446861"
 end
