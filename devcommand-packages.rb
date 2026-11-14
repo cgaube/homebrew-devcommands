@@ -4,5 +4,5 @@ class DevcommandPackages < DevcommandBunFormula
   install_package "packages"
   desc "Manage dev command packages"
   # Version will automatically be set via github workflow action
-  version "2026.10.25-1792965121"
+  version "2026.11.14-1794618208"
 end
